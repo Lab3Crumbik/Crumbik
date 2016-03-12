@@ -1,0 +1,131 @@
+<body class="fondoform" xmlns="http://www.w3.org/1999/html">
+<div class="container">
+  <div class="row">
+
+    <div class="col s12">
+      <h4 class="black-text center">Registrar Administrador de la Organizaci&oacute;n</h4>
+      <div class="input-field col s6">
+        <input disabled value="Administrador de la organizaci&oacute;n" id="disabled" type="text" class="validate">
+        <label for="disabled">Rol </label>
+      </div>
+
+      <div class="input-field col s6 ">
+        <i class="material-icons prefix iconnegro">account_circle</i>
+        <input id="nombreAdmO" type="text" class="validate">
+        <label for="nombreAdmO">Nombre</label>
+      </div>
+
+      <div class="input-field col s6 ">
+        <i class="material-icons prefix iconnegro">account_circle</i>
+        <input id="apellidoAdmO" type="text" class="validate">
+        <label for="apellidoAdmO">Apellido</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">email</i>
+        <input id="emailAdmO" type="text" class="validate">
+        <label for="emailAdmO">Email</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">email</i>
+        <input id="confemailAdmO" type="text" class="validate">
+        <label for="confemailAdmO">Confirmar email</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">phone</i>
+        <input id="telefonoAdmO" type="tel" class="validate">
+        <label for="telefonoAdmO">Tel&eacute;fono</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">contacts</i>
+        <input id="usuarioAdmO" type="text" class="validate">
+        <label for="usuarioAdmO">Nombre de usuario</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">lock</i>
+        <input id="contrasennaAdmO" type="password" class="validate">
+        <label for="contrasennaAdmO">Contraseña</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">lock</i>
+        <input id="confcontrasennaAdmO" type="password" class="validate">
+        <label for="confcontrasennaAdmO">Confirmar Contraseña</label>
+      </div>
+
+      <div class="input-field col s6">
+        <select>
+          <option value="1">Femenino</option>
+          <option value="2">Masculino</option>
+        </select>
+        <label>Sexo</label>
+      </div>
+
+      <div class=" input-field col s6">
+        <input id="fechanac" type="date" class="datepicker">
+      </div>
+
+      <div class="file-field input-field col s6">
+        <div class="btn black">
+          <span>Foto</span>
+          <input type="file" multiple>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Upload one or more files">
+        </div>
+      </div>
+
+      <div class="col s6">
+        <form action="#" >
+          <p>
+            <input type="checkbox" id="test5" />
+            <label class="black-text" for="test5">Mostrar contraseña</label>
+          </p>
+        </form>
+      </div>
+
+      <div class="col s6">
+        <form action="#" >
+          <p>
+            <input type="checkbox" id="test6" />
+            <label class="black-text" for="test6">Estoy de acuerdo con los <u> <a href="" class="black-text">t&eacute;rminos y condiciones</a> </u> </label>
+          </p>
+        </form>
+      </div>
+
+      <div class="center ">
+        <a onmouseDown="alert('El registro de Organización y Administrador se realizó de manera exitosa')"
+           id="btnSiguienteRegAdmO" class="btn waves-effect waves-light" type="submit">Registrar</a>
+
+        <a class=" waves-effect btn center white-text waves-light" <%=  link_to "Atras", paginas_registro_org_administrador_sistema_path, class: "white-text" %></a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
+
+<script>
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 10, // Creates a dropdown of 15 years to control year
+        currentText: 'Hoy',
+        firstDay: 1,
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+        closeText: 'Cerrar'
+    });
+
+</script>
+
+
+</body>

@@ -1,0 +1,52 @@
+
+<div class="container center">
+
+  <h2>Elija su color de Fondo</h2>
+
+  <div class="center row">
+<body  id="prueba">
+<p>
+  <input class="" style="background-color:#e1bee7; width:100px; height:50px " type="button"  name="#e1bee7" value="" onclick="cambia(this)">
+  <input class="" style="background-color:#ffcdd2; width:100px; height:50px " type="button"  name="#ffcdd2" value="" onclick="cambia(this)">
+  <input class="" style="background-color:#bbdefb; width:100px; height:50px " type="button"  name="#bbdefb" value="" onclick="cambia(this)">
+  <input class="" style="background-color:#e6ee9c; width:100px; height:50px " type="button"  name="#e6ee9c" value="" onclick="cambia(this)">
+  <input class="" style="background-color:#80cbc4; width:100px; height:50px " type="button"  name="#80cbc4" value="" onclick="cambia(this)">
+  <input class="" style="background-color:#ffb74d; width:100px; height:50px " type="button"  name="#ffb74d" value="" onclick="cambia(this)">
+</p>
+<p>
+  <input class="" style="background-color:#eceff1; width:100px; height:50px " type="button"  name="#eceff1" value="" onclick="cambia(this)">
+  <input class="" style="background-color:#64b5f6; width:100px; height:50px " type="button"  name="#64b5f6" value="" onclick="cambia(this)">
+  <input class="" style="background-color:#ffeb3b; width:100px; height:50px " type="button"  name="#ffeb3b" value="" onclick="cambia(this)">
+  <input class="" style="background-color:#00e676; width:100px; height:50px " type="button"  name="#00e676" value="" onclick="cambia(this)">
+  <input class="" style="background-color:#c6ff00; width:100px; height:50px " type="button"  name="#c6ff00" value="" onclick="cambia(this)">
+  <input class="" style="background-color:#18ffff; width:100px; height:50px " type="button"  name="#18ffff" value="" onclick="cambia(this)">
+</p>
+<p>
+  <input class="" style="background-color:#ffffff; width:100px; height:50px " type="button"  name="#ffffff" value="" onclick="cambia(this)">
+  <input class="" style="background-color:#8d6e63; width:100px; height:50px " type="button"  name="#8d6e63" value="" onclick="cambia(this)">
+  <input class="" style="background-color:#ffd600; width:100px; height:50px " type="button"  name="#ffd600" value="" onclick="cambia(this)">
+  <input class="" style="background-color:#e91e63; width:100px; height:50px " type="button"  name="#e91e63" value="" onclick="cambia(this)">
+  <input class="" style="background-color:#9c27b0; width:100px; height:50px " type="button"  name="#9c27b0" value="" onclick="cambia(this)">
+  <input class="" style="background-color:#039be5; width:100px; height:50px " type="button"  name="#039be5" value="" onclick="cambia(this)">
+</p>
+
+<div class="row">
+  <div class="center col s12">
+
+    <a onmouseDown="alert('El fondo de se guardó de manera exitosa')"
+       id="btnSiguienteRegAdmO" class="btn waves-effect waves-light" type="submit">Guardar</a>
+    <a class=" waves-effect btn center white-text waves-light" <%=  link_to "Atras", paginas_opc_administrador_org_path, class: "white-text" %></a>
+  </div>
+</div>
+</body>
+<script>
+    function cambia(boton){
+
+        var color=boton.name;
+        document.getElementById("prueba").style.background=color;
+    }
+</script>
+  </div>
+
+
+</div>

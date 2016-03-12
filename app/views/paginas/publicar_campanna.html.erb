@@ -1,0 +1,105 @@
+<body class="fondoform">
+<div class="section row container" id="contactanos">
+
+  <div class="row">
+    <h4 class="black-text center">Publicar Campaña</h4>
+  </div>
+
+  <div class="col s12">
+    <label class="col s1">Categor&iacute;as</label>
+    <form>
+    <p class="col s2">
+      <input type="checkbox" id="intDeportes" />
+      <label for="intDeportes">Deportes</label>
+    </p>
+    <p class="col s2">
+      <input type="checkbox" id="intCine" />
+      <label for="intCine">Cine</label>
+    </p>
+    <p class="col s2">
+      <input type="checkbox" id="intTecnologia" />
+      <label for="intTecnologia">Tecnolog&iacute;a</label>
+    </p>
+    <p class="col s2">
+      <input type="checkbox" id="intNoticias" />
+      <label for="intNoticias">Medicina</label>
+    </p>
+    <p class="col s3">
+      <input type="checkbox" id="intJuegos" />
+      <label for="intJuegos">Moda</label>
+    </p>
+    </form>
+  </div>
+
+  <div class="col s12">
+    <form>
+    <p>
+    <label class="col s1">Sexo</label>
+    </p>
+      <p class="col s2">
+        <input type="checkbox" id="intAmbosSexos" />
+        <label for="intAmbosSexos">Ambos</label>
+      </p>
+    <p class="col s2">
+      <input type="checkbox" id="intFemenino" />
+      <label for="intFemenino">Femenino</label>
+    </p>
+    <p class="col s2">
+      <input type="checkbox" id="intMasculino" />
+      <label for="intMasculino">Masculino</label>
+    </p>
+    </form>
+  </div>
+
+  <div class=" input-field col s11">
+    <input disabled id="fechaCampOrg" type="date" class="datepicker">
+    <label for="fechaCamp">16 February, 2016</label>
+  </div>
+
+  <div class="row ">
+    <form>
+      <div class="input-field col s11 ">
+        <i class="material-icons prefix iconnegro">spellcheck</i>
+        <input id="asuntoCampOrg" type="text" class="validate">
+        <label for="asuntoCampOrg">Asunto</label>
+      </div>
+
+      <div class="input-field col s11 ">
+        <i class="material-icons prefix iconnegro">mode_edit</i>
+        <textarea id="mensajeCampOrg" class="materialize-textarea"></textarea>
+        <label for="mensajeCampOrg">Mensaje </label>
+      </div>
+    </form>
+  </div>
+
+  <div class="file-field input-field col s11">
+    <div class="btn black">
+      <span>Archivo</span>
+      <input type="file" >
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text">
+    </div>
+  </div>
+
+  <div class="row" >
+    <div class="col s12 center" >
+      <button class="btn waves-effect waves-light offset-s4" type="submit" name="action">Publicar</button>
+      <a class=" waves-effect btn center white-text waves-light" <%=  link_to "Atras", paginas_opc_ejecutivo_org_path, class: "white-text" %></a>
+    </div>
+  </div>
+
+
+</div>
+<script>
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 10, // Creates a dropdown of 15 years to control year
+        currentText: 'Hoy',
+        firstDay: 1,
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+        closeText: 'Cerrar'
+    });
+
+</script>
+</body>

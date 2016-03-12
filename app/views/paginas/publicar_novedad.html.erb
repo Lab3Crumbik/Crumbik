@@ -1,0 +1,50 @@
+<body class="fondoform">
+<div class="section row container" id="contactanos">
+
+  <div class="row">
+    <h4 class="black-text center">Publicar Novedad</h4>
+  </div>
+
+  <div class="row ">
+
+    <div class=" input-field col s7">
+      <input id="fechaNov" type="date" class="datepicker">
+      <label for="fechaNov">Fecha de Nacimiento</label>
+    </div>
+
+    <form>
+      <div class="input-field col s7 ">
+        <i class="material-icons prefix iconnegro">spellcheck</i>
+        <input id="asuntoNov" type="text" class="validate">
+        <label for="asuntoNov">Asunto</label>
+      </div>
+
+      <div class="input-field col s7 ">
+        <i class="material-icons prefix iconnegro">mode_edit</i>
+        <textarea id="mensajeNov" class="materialize-textarea"></textarea>
+        <label for="mensajeNov">Mensaje </label>
+      </div>
+    </form>
+  </div>
+
+  <div class="row" >
+    <div class="col s12 center" >
+      <button class="btn waves-effect waves-light offset-s4" type="submit" name="action">Publicar</button>
+      <a class=" waves-effect btn center white-text waves-light" <%=  link_to "Atras", paginas_opc_administrador_org_path, class: "white-text" %></a>
+    </div>
+  </div>
+
+
+</div>
+<script>
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 10, // Creates a dropdown of 15 years to control year
+        currentText: 'Hoy',
+        firstDay: 1,
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+        closeText: 'Cerrar'
+    });
+
+</script>
+</body>

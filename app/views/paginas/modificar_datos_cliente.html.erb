@@ -1,0 +1,87 @@
+<body class="fondoform" xmlns="http://www.w3.org/1999/html">
+<div class="container">
+  <div class="row">
+
+    <div class="col s12">
+      <h4 class="black-text center">Modificar Datos</h4>
+
+
+      <div class="input-field col s6 ">
+        <i class="material-icons prefix iconnegro">account_circle</i>
+        <input value="Jose" id="nombreCliente" type="text" class="validate">
+        <label for="nombreCliente">Nombre</label>
+      </div>
+
+      <div class="input-field col s6 ">
+        <i class="material-icons prefix iconnegro">account_circle</i>
+        <input value="Castillo" id="apellidoCliente" type="text" class="validate">
+        <label for="apellidoCliente">Apellido</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">email</i>
+        <input value="josec@gmail.com" id="emailCliente" type="text" class="validate">
+        <label for="emailCliente">Email</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">phone</i>
+        <input value="0412-5254578" id="telefonoCliente" type="tel" class="validate">
+        <label for="telefonoCliente">Tel&eacute;fono</label>
+      </div>
+
+
+      <div class="input-field col s6">
+        <select disabled>
+
+          <option value="1">Masculino</option>
+        </select>
+        <label>Sexo</label>
+      </div>
+
+      <div class=" input-field col s6">
+        <input value="17 August, 1998" id="fechanacCliente" type="date" class="datepicker">
+      </div>
+
+      <div class="file-field input-field col s12">
+        <div class="btn black">
+          <span>Foto</span>
+          <input type="file">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
+
+
+      <div class="center col s12">
+        <a onmouseDown="alert('Los cambios se realizaron de manera exitosa')"
+           id="btnSiguienteRegAdmO" class="btn waves-effect waves-light" type="submit">Guardar</a>
+        <a class=" waves-effect btn center white-text waves-light" <%=  link_to "Atras", paginas_opc_cliente_path, class: "white-text" %></a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
+
+<script>
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 10, // Creates a dropdown of 15 years to control year
+        currentText: 'Hoyejecutivo_sistema',
+        firstDay: 1,
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+        closeText: 'Cerrar'
+    });
+
+</script>
+
+
+</body>

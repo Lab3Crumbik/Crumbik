@@ -1,0 +1,59 @@
+<body class="fondoform">
+<div class="section row container" id="contactanos">
+
+  <div class="row">
+    <h4 class="black-text center">Registrar Evento</h4>
+  </div>
+  <div class="row ">
+    <form>
+  <div class=" input-field col s7">
+    <input id="fechaEventoEj" type="date" class="datepicker">
+    <label for="fechaEventoEj">Fecha</label>
+  </div>
+
+      <div class="input-field col s7 ">
+        <i class="material-icons prefix iconnegro">query_builder</i>
+        <input id="horaEventoEj" type="text" class="validate">
+        <label for="horaEventoEj">Hora</label>
+      </div>
+
+
+
+      <div class="input-field col s7 ">
+        <i class="material-icons prefix iconnegro">spellcheck</i>
+        <input id="asuntoEventoEj" type="text" class="validate">
+        <label for="asuntoEventoEj">Asunto</label>
+      </div>
+
+
+      <div class="input-field col s7 ">
+        <i class="material-icons prefix iconnegro">mode_edit</i>
+        <textarea id="mensajeEventoEj" class="materialize-textarea"></textarea>
+        <label for="mensajeEventoEj">Mensaje </label>
+      </div>
+    </form>
+  </div>
+
+
+  <div class="row" >
+    <div class="col s12 center" >
+      <button class="btn waves-effect waves-light offset-s4" type="submit" name="action">Publicar</button>
+      <a class=" waves-effect btn center white-text waves-light" <%=  link_to "Atras", paginas_opc_ejecutivo_org_path, class: "white-text" %></a>
+    </div>
+  </div>
+
+
+</div>
+
+<script>
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 10, // Creates a dropdown of 15 years to control year
+        currentText: 'Hoy',
+        firstDay: 1,
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+        closeText: 'Cerrar'
+    });
+
+</script>
+</body>

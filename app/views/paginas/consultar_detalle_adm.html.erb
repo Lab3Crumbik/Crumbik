@@ -1,0 +1,77 @@
+<body class="fondoform">
+<div class="container">
+  <div class="row">
+
+    <div class="col s12">
+      <h4 class="black-text center">Consulta del Administrador de la Organizaci&oacute;n</h4>
+      <div class="input-field col s6">
+        <input disabled value="Administrador de la organizaci&oacute;n" id="disabled" type="text" class="validate">
+        <label for="disabled">Rol </label>
+      </div>
+
+      <div class="input-field col s6 ">
+        <i class="material-icons prefix iconnegro">account_circle</i>
+        <input disabled value="Mario" id="nombreAdmO" type="text" class="validate">
+        <label for="nombreAdmO">Nombre</label>
+      </div>
+
+      <div class="input-field col s6 ">
+        <i class="material-icons prefix iconnegro">account_circle</i>
+        <input disabled value="Aguirre" id="apellidoAdmO" type="text" class="validate">
+        <label for="apellidoAdmO">Apellido</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">email</i>
+        <input disabled value="maguirre@gmail.com" id="emailAdmO" type="text" class="validate">
+        <label for="emailAdmO">Email</label>
+      </div>
+
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">phone</i>
+        <input disabled value="0276-8524798" id="telefonoAdmO" type="tel" class="validate">
+        <label for="telefonoAdmO">Tel&eacute;fono</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">contacts</i>
+        <input disabled value="maguirre" id="usuarioAdmO" type="text" class="validate">
+        <label for="usuarioAdmO">Nombre de usuario</label>
+      </div>
+
+
+      <div class="input-field col s6">
+        <select disabled>
+          <option value disabled="1">Masculino</option>
+        </select>
+        <label>Sexo</label>
+      </div>
+
+      <div class=" input-field col s6">
+        <input disabled value="06 february, 1980"  id="fechanac" type="date" class="datepicker">
+      </div>
+
+      <div class="file-field input-field col s6">
+        <div class="btn black disabled">
+          <span>Foto</span>
+          <input type="file" multiple>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Upload one or more files">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
+
+
+</body>

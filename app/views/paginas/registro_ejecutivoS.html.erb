@@ -1,0 +1,129 @@
+<body class="fondoform">
+<div class="container">
+  <div class="row">
+
+    <div class="col s12">
+      <h4 class="black-text center">Registrar Ejecutivo del Sistema</h4>
+      <div class="input-field col s6">
+        <input disabled value="Ejecutivo del Sistema" id="disabled" type="text" class="validate">
+        <label for="disabled">Rol </label>
+      </div>
+
+      <div class="input-field col s6 ">
+        <i class="material-icons prefix iconnegro">account_circle</i>
+        <input id="nombreEjeS" type="text" class="validate">
+        <label for="nombreEjeS">Nombre</label>
+      </div>
+
+      <div class="input-field col s6 ">
+        <i class="material-icons prefix iconnegro">account_circle</i>
+        <input id="apellidoEjeS" type="text" class="validate">
+        <label for="apellidoEjeS">Apellido</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">email</i>
+        <input id="emailEjeS" type="text" class="validate">
+        <label for="emailEjeS">Email</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">email</i>
+        <input id="confemailEjeS" type="text" class="validate">
+        <label for="confemailEjeS">Confirmar email</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">phone</i>
+        <input id="telefonoEjeS" type="tel" class="validate">
+        <label for="telefonoEjeS">Tel&eacute;fono</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">contacts</i>
+        <input id="usuarioEjeS" type="text" class="validate">
+        <label for="usuarioEjeS">Nombre de usuario</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">lock</i>
+        <input id="contrasennaEjeS" type="password" class="validate">
+        <label for="contrasennaEjeS">Contraseña</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">lock</i>
+        <input id="confcontrasennaEjeS" type="password" class="validate">
+        <label for="confcontrasennaEjeS">Confirmar Contraseña</label>
+      </div>
+
+      <div class="input-field col s6">
+        <select>
+          <option value="1">Femenino</option>
+          <option value="2">Masculino</option>
+        </select>
+        <label>Sexo</label>
+      </div>
+
+      <div class=" input-field col s6">
+        <input id="fechanac" type="date" class="datepicker">
+      </div>
+
+      <div class="file-field input-field col s6">
+        <div class="btn black">
+          <span>Foto</span>
+          <input type="file" multiple>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Upload one or more files">
+        </div>
+      </div>
+
+      <div class="col s6">
+        <form action="#" >
+          <p>
+            <input type="checkbox" id="test5" />
+            <label class="black-text" for="test5">Mostrar contraseña</label>
+          </p>
+        </form>
+      </div>
+
+      <div class="col s6">
+        <form action="#" >
+          <p>
+            <input type="checkbox" id="test6" />
+            <label class="black-text" for="test6">Estoy de acuerdo con los <u> <a href="" class="black-text">t&eacute;rminos y condiciones</a> </u> </label>
+          </p>
+        </form>
+      </div>
+
+      <div class="center">
+        <a onmouseDown="alert('El registro del ejecutivo del Sistema se realizó de manera exitosa')"
+           id="btnRegistrarEjeS" class="btn waves-effect waves-light" type="submit">Registrar</a>
+        <a class=" waves-effect btn center white-text waves-light" <%=  link_to "Atras", paginas_opc_administrador_sistema_path, class: "white-text" %></a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
+
+<script>
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 10, // Creates a dropdown of 15 years to control year
+        currentText: 'Hoy',
+        firstDay: 1,
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+        closeText: 'Cerrar'
+    });
+
+</script>
+
+
+</body>

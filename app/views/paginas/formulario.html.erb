@@ -1,0 +1,26 @@
+<div class = 'container'>
+
+         <h1> Editar Email </h1>
+             <%= form_for :formulario do |f| %>
+              <p>
+                  <%= f.label :titulo %>
+                  <%= f.text_field :titulo %>
+              </p>
+                   <p>
+                       <%= f.label :contenido %>
+                       <%= f.text_area :contenido %>
+                     </p>
+
+                     <p>
+                            
+                          <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>subir arcivo
+                          </a>   
+
+                     </p> 
+                       <p>
+                          <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>ACEPTAR </a>
+                        </p>
+
+
+	<% end %>
+</div>

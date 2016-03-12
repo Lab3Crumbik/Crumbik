@@ -1,0 +1,79 @@
+<body class="fondoform" xmlns="http://www.w3.org/1999/html">
+<div class="container">
+  <div class="row">
+
+    <div class="col s12 ">
+      <h4 class="black-text center">Registrar Pago de la Organizaci&oacute;n</h4>
+
+      <div class="input-field col s6">
+        <select disabled>
+          <option value=""disabled selected>Tombola</option>
+        </select>
+        <label>Nombre de la Organización</label>
+      </div>
+
+
+      <div class="input-field col s6 ">
+        <i class="material-icons prefix iconnegro">perm_identity</i>
+        <input  disabled value="Mario Aguirre" id="nombreAdmS" type="text" class="validate">
+        <label for="nombreAdmS">Administrador</label>
+      </div>
+
+      <div class="input-field col s6">
+        <select>
+          <option value=""disabled selected>Seleccione el tipo de pago</option>
+          <option value="1">Deposito</option>
+          <option value="2">Transferencia</option>
+          <option value="3">Cheque</option>
+        </select>
+        <label>Tipo de pago</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">label</i>
+        <input id="refPago" type="text" class="validate">
+        <label for="refPago">Referencia</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">payment</i>
+        <input id="montoPago" type="text" class="validate">
+        <label for="montoPago">Monto</label>
+      </div>
+
+      <div class=" input-field col s6">
+        <input id="fechaPagoOrg" type="date" class="datepicker">
+        <label for="fechaPagoOrg">Fecha de Pago</label>
+      </div>
+
+      <div class="row">
+        <div class="center col s12">
+
+          <a onmouseDown="alert('El pago se registró de manera exitosa')"
+             id="btnSiguienteRegAdmO" class="btn waves-effect waves-light" type="submit">Registrar</a>
+          <a class=" waves-effect btn center white-text waves-light" <%=  link_to "Atras", paginas_opc_administrador_org_path, class: "white-text" %></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
+
+<script>
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 10, // Creates a dropdown of 15 years to control year
+        currentText: 'Hoy',
+        firstDay: 1,
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+        closeText: 'Cerrar'
+    });
+
+</script>
+</body>

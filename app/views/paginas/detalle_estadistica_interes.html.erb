@@ -1,0 +1,100 @@
+<body class="fondoform" xmlns="http://www.w3.org/1999/html">
+<h4 class="black-text center">Estadisticas de la CampaÃ±a</h4>
+<br>
+<br>
+<br>
+<br>
+<div class="container row">
+  <div class="row left" id="left">
+
+
+    <div class=" col s10 white ">
+      <table class="centered">
+        <thead>
+        <tr>
+          <th data-field="price" colspan="auto">Interes</th>
+          <th data-field="price" colspan="auto">Descripcion</th>
+          <th data-field="price" colspan="auto">Cantidad de personas interesadas</th>
+          <th data-field="price" colspan="auto">Porcentaje total</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+          <td>Tecnologia</td>
+          <td>Cualquier vaina</td>
+          <td>40</td>
+          <td>50%</td>
+        </tr>
+
+        <tr>
+          <td>Medicina</td>
+          <td>Otra vaina</td>
+          <td>60</td>
+          <td>75%</td>
+        </tr>
+
+        <tr>
+          <td>Moda</td>
+          <td>Otra paja</td>
+          <td>20</td>
+          <td>25%</td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <div id="center" class="left-align" >
+    <img height="300px" width="300px"  src="<%= asset_path 'diagrama.png' %>">
+  </div>
+
+</div>
+<br>
+<h5 class="green-text center">Publicaciones mas populares</h5>
+<br>
+<div class="container">
+  <div class="col s8">
+    <table class=" centered " >
+      <thead>
+      <tr>
+        <th data-field="price">Categoria de la Publicacion</th>
+        <th data-field="price">Descripcion</th>
+        <th data-field="price">Retweets</th>
+        <th data-field="price">Favoritos</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr>
+        <td>Tecnologia</td>
+        <td>Nuevo XPhone 8S</td>
+        <td>541</td>
+        <td>25</td>
+      </tr>
+
+      <tr>
+        <td>Medicina</td>
+        <td>La cura para el cancer</td>
+        <td>481</td>
+        <td>20</td>
+      </tr>
+
+      <tr>
+        <td>Tecnologia</td>
+        <td>Nueva memoria RAM de 1TB</td>
+        <td>300</td>
+        <td>10</td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+<br>
+<div class="center">
+  <a class=" waves-effect btn center white-text waves-light" <%=  link_to "Atras", paginas_opc_analista_org_path, class: "white-text" %></a>
+</div>
+</body>

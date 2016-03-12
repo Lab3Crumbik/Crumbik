@@ -1,0 +1,154 @@
+<body class="fondoform" xmlns="http://www.w3.org/1999/html">
+<div class="container">
+  <div class="row">
+
+    <div class="col s12">
+      <h4 class="black-text center">Registro del Cliente</h4>
+
+
+      <div class="input-field col s6 ">
+        <i class="material-icons prefix iconnegro">account_circle</i>
+        <input id="nombreCli" type="text" class="validate">
+        <label for="nombreCli">Nombre</label>
+      </div>
+
+      <div class="input-field col s6 ">
+        <i class="material-icons prefix iconnegro">account_circle</i>
+        <input id="apellidoCli" type="text" class="validate">
+        <label for="apellidoCli">Apellido</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">email</i>
+        <input id="emailCli" type="text" class="validate">
+        <label for="emailCli">Email</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">email</i>
+        <input id="confemailCli" type="text" class="validate">
+        <label for="confemailCli">Confirmar email</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">phone</i>
+        <input id="telefonoCli" type="tel" class="validate">
+        <label for="telefonoCli">Tel&eacute;fono</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">contacts</i>
+        <input id="usuarioCli" type="text" class="validate">
+        <label for="usuarioCli">Nombre de usuario</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">lock</i>
+        <input id="contrasennaCli" type="password" class="validate">
+        <label for="contrasennaCli">Contraseña</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">lock</i>
+        <input id="confcontrasennaCli" type="password" class="validate">
+        <label for="confcontrasennaCli">Confirmar Contraseña</label>
+      </div>
+
+      <div class="input-field col s6">
+        <select>
+          <option value="1">Femenino</option>
+          <option value="2">Masculino</option>
+        </select>
+        <label>Sexo</label>
+      </div>
+
+      <div class=" input-field col s6">
+        <input id="fechanacCli" type="date" class="datepicker">
+        <label for="fechanacCli">Fecha de Nacimiento</label>
+      </div>
+
+      <div>
+        <label class="col s1">Intereses</label>
+        <p class="col s2">
+          <input type="checkbox" id="intDeportes" />
+          <label for="intDeportes">Deportes</label>
+          </p>
+        <p class="col s2">
+          <input type="checkbox" id="intCine" />
+          <label for="intCine">Cine</label>
+        </p>
+        <p class="col s2">
+          <input type="checkbox" id="intTecnologia" />
+          <label for="intTecnologia">Tecnolog&iacute;a</label>
+        </p>
+        <p class="col s2">
+          <input type="checkbox" id="intNoticias" />
+          <label for="intNoticias">Medicina</label>
+        </p>
+        <p class="col s2">
+          <input type="checkbox" id="intJuegos" />
+          <label for="intJuegos">Moda</label>
+        </p>
+
+      </div>
+
+      <div class="file-field input-field col s6">
+        <div class="btn black">
+          <span>Foto</span>
+          <input type="file" multiple>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Upload one or more files">
+        </div>
+      </div>
+<div class="col s12">
+      <div class="col s6">
+        <form action="#" >
+          <p>
+            <input type="checkbox" id="test5" />
+            <label class="black-text" for="test5">Mostrar contraseña</label>
+          </p>
+        </form>
+      </div>
+
+      <div class="col s6">
+        <form action="#" >
+          <p>
+            <input type="checkbox" id="test6" />
+            <label class="black-text" for="test6">Estoy de acuerdo con los <u> <a href="" class="black-text">t&eacute;rminos y condiciones</a> </u> </label>
+          </p>
+        </form>
+      </div>
+
+
+      <div class="center ">
+        <a onmouseDown="alert('El registro del cliente se realizó de manera exitosa')"
+           id="btnRegistrarCliente" class="btn waves-effect waves-light" type="submit">Registrar</a>
+
+      </div>
+</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
+
+<script>
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 10, // Creates a dropdown of 15 years to control year
+        currentText: 'Hoy',
+        firstDay: 1,
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+        closeText: 'Cerrar'
+    });
+
+</script>
+
+
+</body>

@@ -1,0 +1,40 @@
+<body class="fondoform" xmlns="http://www.w3.org/1999/html">
+<div class="container">
+  <div class="row">
+
+    <div class="col s12">
+      <h4 class="black-text center">Iniciar Sesi&oacute;n</h4>
+
+        <div class="input-field ">
+          <i class="material-icons prefix iconnegro">contacts</i>
+          <input id="usuarioAdmO" type="text" class="validate">
+          <label for="usuarioAdmO">Usuario</label>
+        </div>
+
+        <div class="input-field">
+          <i class="material-icons prefix iconnegro">lock</i>
+          <input id="contrasennaAdmO" type="password" class="validate">
+          <label for="contrasennaAdmO">Contraseña</label>
+        </div>
+
+      <div class="row">
+        <div class="col s12 center">
+          <a class=" waves-effect btn center white-text waves-light" <%=  link_to "Iniciar Sesion", paginas_opc_administrador_org_path, class: "white-text" %></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
+
+
+
+
+</body>

@@ -1,0 +1,42 @@
+
+<div class="navbar-fixed">
+<nav>
+    <div class="nav-wrapper white">
+    	<div class="contenedor">
+    		<a href="" class="brand-logo">
+    			<img src="<%= asset_path 'logo.png' %>"><span id="logo-text">CR&Uuml;MBIK</span>
+    		</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		        <li><%=  link_to "Inicio", root_path, class: "grey-text" %></li>
+		        <li><a href="#servicios" class="grey-text">Servicios</a></li>
+		        <li><a href="#planes" class="grey-text">Planes</a></li>
+		        <li><a href="#contactanos" class="grey-text">Cont&aacute;ctanos</a></li>
+		      </ul>
+		      <ul id="nav-sesion" class="hide-on-med-and-down">
+                <% if user_signed_in? %>
+
+                     <li><%=  link_to "Cerrar Sesion" , destroy_user_session_path, method: :delete, class: "blue-text" %></li>
+
+                    <div id="user_nav">
+                      <% if current_user %>
+                          Signed in as <strong><%= current_user.name %></strong>! <img src="<%= current_user.image %>">
+                          <%= link_to "Signout", destroy_user_session_path, method: :delete %>
+
+
+
+                      <% else %>
+                          <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+                      <% end %>
+                    </div>
+
+                <%  else %>
+                    <li><%=  link_to "Iniciar Sesion", paginas_iniciarSesionAdmOrg_path, class: "grey-text" %></li>
+                    <li> <%= link_to "Registrarse" , paginas_registro_org_path , class: "grey-text" %></li>
+                    <%  end %>
+
+
+		    </ul>
+    	</div>
+    </div>
+</nav>
+</div>

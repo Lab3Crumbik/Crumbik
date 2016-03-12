@@ -1,0 +1,93 @@
+<body class="fondoform">
+<div class="container">
+  <div class="row">
+
+    <div class="col s12">
+      <h4 class="black-text center">Modificar Datos</h4>
+      <div class="input-field col s6">
+        <select disabled>
+          <option value disabled="1">Ejecutivo</option>
+          <option value="2">Analista</option>
+        </select>
+        <label>Rol</label>
+      </div>
+
+      <div class="input-field col s6 ">
+        <i class="material-icons prefix iconnegro">account_circle</i>
+        <input value="Maria" id="nombreEjS" type="text" class="validate">
+        <label for="nombreEjS">Nombre</label>
+      </div>
+
+      <div class="input-field col s6 ">
+        <i class="material-icons prefix iconnegro">account_circle</i>
+        <input value="Espinoza" id="apellidoEjS" type="text" class="validate">
+        <label for="apellidoEjS">Apellido</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">email</i>
+        <input value="maria@gmail.com" id="emailEjS" type="text" class="validate">
+        <label for="emailEjS">Email</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix iconnegro">phone</i>
+        <input value="0412-2455147" id="telefonoEjS" type="tel" class="validate">
+        <label for="telefonoEjS">Tel&eacute;fono</label>
+      </div>
+
+
+      <div class="input-field col s6">
+        <select disabled>
+
+          <option value disabled="1">Femenino</option>
+        </select>
+        <label>Sexo</label>
+      </div>
+
+      <div class=" input-field col s6">
+        <input value="28 August, 1990" id="fechanacEjS" type="date" class="datepicker">
+      </div>
+
+      <div class="file-field input-field col s6">
+        <div class="btn black">
+          <span>Foto</span>
+          <input type="file" multiple>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Upload one or more files">
+        </div>
+      </div>
+
+
+      <div class="center">
+        <a onmouseDown="alert('Los cambios se realizaron de manera exitosa')"
+           id="btnSiguienteRegAdmO" class="btn waves-effect waves-light" type="submit">Guardar</a>
+        <a class=" waves-effect btn center white-text waves-light" <%=  link_to "Atras", paginas_opc_ejecutivo_sistema_path, class: "white-text" %></a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
+
+<script>
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 10, // Creates a dropdown of 15 years to control year
+        currentText: 'Hoy',
+        firstDay: 1,
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+        closeText: 'Cerrar'
+    });
+
+</script>
+
+
+</body>
