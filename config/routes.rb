@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :payments
   get 'welcome/index'
 
   resources :organizations

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @payment.amount %>
+</p>
+
+<p>
+  <strong>Identification:</strong>
+  <%= @payment.identification %>
+</p>
+
+<p>
+  <strong>Card number:</strong>
+  <%= @payment.card_number %>
+</p>
+
+<p>
+  <strong>Expiration month:</strong>
+  <%= @payment.expiration_month %>
+</p>
+
+<p>
+  <strong>Expiration year:</strong>
+  <%= @payment.expiration_year %>
+</p>
+
+<p>
+  <strong>Security code:</strong>
+  <%= @payment.security_code %>
+</p>
+
+<%= link_to 'Back', payments_path %>
