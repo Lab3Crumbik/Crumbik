@@ -24,8 +24,6 @@ class PaymentsController < ApplicationController
   # POST /payments.json
   def create
     @payment = Payment.new(payment_params)
-    @cedula = params[:identification]
-
     url = 'http://localhost/servicio/Despachador.php'
     parametros = {params: {
         "servicio" => 8,
@@ -46,8 +44,6 @@ class PaymentsController < ApplicationController
     #     "monto" => 3000
     # }}
     resultado = ActiveSupport::JSON.decode(RestClient.get(url, parametros))
-    puts payment_params[:identification]
-    puts resultado
 
  if resultado["exito"] == "true"
       puts "entro al if"
