@@ -1,15 +1,19 @@
-<div class="container">
+<div class="card-panel teal lighten-3" xmlns="http://www.w3.org/1999/html">
+    <div class="container">
+
   <h2>Sign up</h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 
       <div class="field">
-        <%= f.label :email %><br />
+        <i class="material-icons prefix iconnegro">email</i>
+        <br><%= f.label :email, class:'black-text' %><br />
         <%= f.email_field :email, autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.label :password %>
+        <i class="material-icons prefix iconnegro">lock</i>
+        <br><%= f.label :password, class:'black-text'%></br>
         <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
@@ -17,23 +21,29 @@
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation %><br />
+        <i class="material-icons prefix iconnegro">lock</i>
+        <br><%= f.label :password_confirmation, class:'black-text'%><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
 
       <div class="field">
-        <%= f.label :nombre%><br />
-        <%= f.text_field :name%> <i class="material-icons">info_outline</i>
+        <i class="material-icons prefix iconnegro">account_circle </i>
+        <br><%= f.label :nombre, class:'black-text' %><br />
+        <%= f.text_field :name%>
       </div>
 
       <div class="field">
-        <%= f.label :apellido%><br />
+
+        <i class="material-icons prefix iconnegro">account_circle </i>
+        <br><%= f.label :apellido,class:'black-text' %><br />
+            </br>
         <%= f.text_field :lastname%>
+
       </div>
 
 
       <div class="field">
-        <%= f.label :Fecha_de_nacimiento %><br />
+        <%= f.label :Fecha_de_nacimiento,class:'black-text' %><br />
         <%= f.text_field :birthdate, type: "date", class: "datepicker "%>
         <script>
             $('.datepicker').pickadate({
@@ -49,7 +59,7 @@
         $('select').material_select();
         });
         </script>
-        <%=f.label :Rol%>
+        <%=f.label :Rol,class:'black-text'%>
         <%= f.select :rol, options_for_select([["Administrador de la Organizacion", "1"], ["Ejecutivo de Ventas", "2"],["Analista", "3"]]) %>
 
         <label>Materialize Select</label>
@@ -59,10 +69,11 @@
 
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "Sign up",class:"btn waves-effect waves-light" %>
       </div>
 
   <% end %>
 
   <%= render "devise/shared/links" %>
+</div>
 </div>
