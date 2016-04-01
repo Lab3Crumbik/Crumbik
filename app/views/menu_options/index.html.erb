@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Menu Options</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @menu_options.each do |menu_option| %>
+      <tr>
+        <td><%= menu_option.name %></td>
+        <td><%= link_to 'Show', menu_option %></td>
+        <td><%= link_to 'Edit', edit_menu_option_path(menu_option) %></td>
+        <td><%= link_to 'Destroy', menu_option, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Menu option', new_menu_option_path %>

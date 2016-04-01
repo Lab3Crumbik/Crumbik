@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160401204506) do
+ActiveRecord::Schema.define(version: 20160401220951) do
 
   create_table "advertising_campaigns", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -24,6 +24,25 @@ ActiveRecord::Schema.define(version: 20160401204506) do
   end
 
   add_index "advertising_campaigns", ["product_id"], name: "index_advertising_campaigns_on_product_id", using: :btree
+
+  create_table "countries", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "status",     limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "info",       limit: 255
+    t.string   "name",       limit: 255
+    t.date     "date"
+    t.string   "status",     limit: 255
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
 
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id",      limit: 4
@@ -44,6 +63,32 @@ ActiveRecord::Schema.define(version: 20160401204506) do
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
+  create_table "interactions", force: :cascade do |t|
+    t.string   "content",    limit: 255
+    t.date     "date"
+    t.integer  "product_id", limit: 4
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "interactions", ["product_id"], name: "index_interactions_on_product_id", using: :btree
+  add_index "interactions", ["user_id"], name: "index_interactions_on_user_id", using: :btree
+
+  create_table "menu_options", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "menus_rols", force: :cascade do |t|
+    t.integer "menu_option_id", limit: 4
+    t.integer "rol_id",         limit: 4
+  end
+
+  add_index "menus_rols", ["menu_option_id"], name: "index_menus_rols_on_menu_option_id", using: :btree
+  add_index "menus_rols", ["rol_id"], name: "index_menus_rols_on_rol_id", using: :btree
+
   create_table "organizations", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "email",      limit: 255
@@ -54,7 +99,10 @@ ActiveRecord::Schema.define(version: 20160401204506) do
     t.boolean  "status"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "country_id", limit: 4
   end
+
+  add_index "organizations", ["country_id"], name: "index_organizations_on_country_id", using: :btree
 
   create_table "payments", force: :cascade do |t|
     t.string   "amount",           limit: 255
@@ -76,6 +124,32 @@ ActiveRecord::Schema.define(version: 20160401204506) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "lastname",   limit: 255
+    t.string   "sex",        limit: 255
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+
+  create_table "rols", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "status",     limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "rols_users", force: :cascade do |t|
+    t.integer "rol_id",  limit: 4
+    t.integer "user_id", limit: 4
+  end
+
+  add_index "rols_users", ["rol_id"], name: "index_rols_users_on_rol_id", using: :btree
+  add_index "rols_users", ["user_id"], name: "index_rols_users_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255,             null: false
@@ -99,11 +173,23 @@ ActiveRecord::Schema.define(version: 20160401204506) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
+    t.integer  "country_id",             limit: 4
   end
 
+  add_index "users", ["country_id"], name: "index_users_on_country_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "advertising_campaigns", "products"
+  add_foreign_key "events", "users"
   add_foreign_key "identities", "users"
+  add_foreign_key "interactions", "products"
+  add_foreign_key "interactions", "users"
+  add_foreign_key "menus_rols", "menu_options"
+  add_foreign_key "menus_rols", "rols"
+  add_foreign_key "organizations", "countries"
+  add_foreign_key "profiles", "users"
+  add_foreign_key "rols_users", "rols"
+  add_foreign_key "rols_users", "users"
+  add_foreign_key "users", "countries"
 end
