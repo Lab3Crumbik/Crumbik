@@ -21,7 +21,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     @user = @identity.user || current_user
     if @user.nil?
-      @user = User.create( email: @identity.email , name: @identity.name, lastname: @identity.name, sex: 1, birthdate: "07-08-1993" , phone: "0426", rol: '1' )
+      @user = User.create( email: @identity.email , name: @identity.name, lastname: @identity.name, birthdate: "07-08-1993" , rol: '1' )
       @identity.update_attribute( :user_id, @user.id )
     end
 
