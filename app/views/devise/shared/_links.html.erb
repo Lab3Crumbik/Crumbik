@@ -2,10 +2,13 @@
   <%= link_to "Iniciar Sesion", new_session_path(resource_name),  class: "waves-effect waves-light btn botonLogin"  %><br>
 <% end -%>
 <div class="row">
+<% if request.host == 'lvh.me' %>
+<% else %>
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
     <%= link_to "Google+", omniauth_authorize_path(resource_name, provider),class: 'waves-effect btn red darken-3 col s2' %><br>
   <% end -%>
+  <% end %>
 <% # #{provider.to_s.titleize}%>
 </div>
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
@@ -23,12 +26,13 @@
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
   <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
 <% end -%>
-
+      <% if request.host == 'lvh.me' %>
+      <% else %>
       <%- if devise_mapping.omniauthable? %>
           <%- resource_class.omniauth_providers.each do |provider| %>
               <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
           <% end -%>
       <% end -%>
-
+      <% end %>
 
 <% end -%>
