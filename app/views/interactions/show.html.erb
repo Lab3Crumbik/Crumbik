@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @interaction.content %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @interaction.date %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @interaction.product %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @interaction.user %>
+</p>
+
+<%= link_to 'Edit', edit_interaction_path(@interaction) %> |
+<%= link_to 'Back', interactions_path %>

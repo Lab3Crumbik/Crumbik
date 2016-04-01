@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
 
+  resources :profiles
+  resources :events
+  resources :menu_options
+  resources :rols
+  resources :countries
+  resources :interactions
   resources :advertising_campaigns
   resources :products
   resources :payments
