@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :advertising_campaigns
+  resources :products
   resources :payments
   get 'welcome/index'
 
