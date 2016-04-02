@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :interactions
   belongs_to :country
-  has_and_belongs_to_many :rols
+  has_many :rols
   has_many :events
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
