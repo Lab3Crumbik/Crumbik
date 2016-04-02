@@ -1,46 +1,32 @@
+<div style="background-image: url(<%= asset_path 'images/fondo.jpg' %>) !important;
+  background-size: cover !important;">
+<h2 class="gray center-align">Inicio Sesion</h2>
 <div class="container">
-<h2 class="bold gray">Inicio Sesion</h2>
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
+  <div class="input-field">
+     <i class="material-icons prefix iconnegro">email</i>
+    <%= f.label :email , class: 'black-text'%><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
+  <div class="input-field">
+  <i class="material-icons prefix iconnegro">lock</i>
+    <%= f.label :password, class: 'black-text'%><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
-    <div class="field">
+    <div class="input-field">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
-    </div>
+    </div><br>
   <% end -%>
-
-
-
-      <div id="user_nav">
-        <% if current_user %>
-            Signed in as <strong><%= current_user.name %></strong>! <img>
-
-            <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% else %>
-            <%= link_to "Sign in with Facebook", "/users/auth/facebook", id: "sign_in" %>
-        <% end %>
-      </div>
-
-
-
-      <div class="actions row">
-    <%= f.submit "Iniciar Sesion" , class: 'waves-effect waves-light btn col s2' %>
-
-  </div>
+      <div class="input-field">
+        <%= f.submit "Iniciar Sesion" , class: 'waves-effect waves-light btn col s3' %>
+            <%= link_to "Facebook", "/users/auth/facebook", id: "sign_in", class: 'waves-effect waves-light btn col s3 blue darken-2', style: 'color: #fff;' %>
+        </div>
 <% end %>
+</div>
 <%= render "devise/shared/links" %>
-
-
-
 
 </div>
