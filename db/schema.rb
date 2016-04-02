@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160401220951) do
+ActiveRecord::Schema.define(version: 20160402141224) do
 
   create_table "advertising_campaigns", force: :cascade do |t|
     t.string   "name",       limit: 255
