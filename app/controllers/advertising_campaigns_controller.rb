@@ -31,6 +31,8 @@ class AdvertisingCampaignsController < ApplicationController
 
     respond_to do |format|
       if @advertising_campaign.save
+        $client.update("Nueva campaña creada")
+
         format.html { redirect_to @advertising_campaign, notice: 'Advertising campaign was successfully created.' }
         format.json { render :show, status: :created, location: @advertising_campaign }
       else
