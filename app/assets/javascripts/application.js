@@ -17,3 +17,7 @@
 //= require turbolinks
 //= require_tree .
 //= javascript_include_tag 'application'
+
+$(document).ready(function() {
+    $('select').material_select();
+});

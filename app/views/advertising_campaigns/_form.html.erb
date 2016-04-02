@@ -27,11 +27,13 @@
     <%= f.label :image %><br>
     <%= f.text_field :image %>
   </div>
-  <div class="field">
-    <%= f.label :product_id %><br>
-    <%= f.text_field :product_id %>
-  </div>
+
+    <div class="field">
+      <%= f.label :product_id %>
+      <%= f.select :product_id, options_for_select(@products.map{|p| [p.name, p.id]}, required: true, class: 'col s8') %>
+    </div><br>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
