@@ -10,15 +10,18 @@ class AdvertisingCampaignsController < ApplicationController
   # GET /advertising_campaigns/1
   # GET /advertising_campaigns/1.json
   def show
+    @products = Product.all
   end
 
   # GET /advertising_campaigns/new
   def new
     @advertising_campaign = AdvertisingCampaign.new
+    @products = Product.all
   end
 
   # GET /advertising_campaigns/1/edit
   def edit
+    @products = Product.all
   end
 
   # POST /advertising_campaigns
