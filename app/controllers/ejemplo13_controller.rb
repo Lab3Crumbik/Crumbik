@@ -16,8 +16,7 @@ class Ejemplo13Controller < ApplicationController
  end
 
  def ajax
-
- 	@tipo= current_user.rol
+ 	@tipo= 1
 	@arbols = Arbols.new
 	@tira = @arbols.BuscarTodosArbolJson(@tipo)
 	render :text => @tira
