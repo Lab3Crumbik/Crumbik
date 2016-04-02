@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160401220951) do
+ActiveRecord::Schema.define(version: 20160402221128) do
 
   create_table "advertising_campaigns", force: :cascade do |t|
     t.string   "name",                limit: 255
@@ -178,11 +178,13 @@ ActiveRecord::Schema.define(version: 20160401220951) do
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
     t.integer  "country_id",             limit: 4
+    t.integer  "rol_id",                 limit: 4
   end
 
   add_index "users", ["country_id"], name: "index_users_on_country_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["rol_id"], name: "index_users_on_rol_id", using: :btree
 
   add_foreign_key "advertising_campaigns", "products"
   add_foreign_key "events", "users"
@@ -196,4 +198,5 @@ ActiveRecord::Schema.define(version: 20160401220951) do
   add_foreign_key "rols_users", "rols"
   add_foreign_key "rols_users", "users"
   add_foreign_key "users", "countries"
+  add_foreign_key "users", "rols"
 end
