@@ -1,3 +1,6 @@
+
+<div class="container">
+  <div class="row">
 <%= form_for(@organization) do |f| %>
   <% if @organization.errors.any? %>
     <div id="error_explanation">
@@ -11,35 +14,40 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
+  <div class="field col s6">
+    <%= f.label :Nombre, class: 'black-text'%><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :email %><br>
+  <div class="field col s6">
+    <%= f.label :Email, class: 'black-text' %><br>
     <%= f.text_field :email %>
   </div>
-  <div class="field">
-    <%= f.label :slogan %><br>
+  <div class="field col s6 ">
+    <%= f.label :Eslogan, class: 'black-text' %><br>
     <%= f.text_area :slogan %>
   </div>
-  <div class="field">
-    <%= f.label :mission %><br>
+  <div class="field col s6">
+    <%= f.label :Mision, class: 'black-text' %><br>
     <%= f.text_area :mission %>
   </div>
-  <div class="field">
-    <%= f.label :vision %><br>
+  <div class="field col s6">
+    <%= f.label :Vision, class: 'black-text' %><br>
     <%= f.text_area :vision %>
   </div>
-  <div class="field">
-    <%= f.label :phone %><br>
+  <div class="field col s6">
+    <%= f.label :Telefono, class: 'black-text' %><br>
     <%= f.text_field :phone %>
   </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.check_box :status %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
+
+        <div class="actions row ">
+          <div class="col s12 center">
+            <%= f.submit "Registrar" , class: 'waves-effect waves-light btn ' %>
+          </div>
+        </div>
+
 <% end %>
+  </div>
+</div>
+

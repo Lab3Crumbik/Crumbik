@@ -5,23 +5,7 @@ body {
 	margin:0;
 	padding:0;
 }
-h1 {
-	font-family: Georgia,"Times New Roman",Times,serif;
-	font-size:26px;
-	color:#083772;
-	letter-spacing:-1px;
-	font-weight:normal;
-	background:#eee;
-	padding:15px 20px;
-	border-bottom:1px solid #ccc;
-}
-h2 {
-	font-size: 18px;
-	line-height:18px;
-	color:#083772;
-	margin-bottom:15px;
-	font-weight:normal;
-}
+
 p {
 	margin:10px 20px;
 	line-height:18px;

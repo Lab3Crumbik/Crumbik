@@ -31,6 +31,7 @@
       <%- if devise_mapping.omniauthable? %>
           <%- resource_class.omniauth_providers.each do |provider| %>
               <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
+                  <%= link_to "Facebook", "/users/auth/facebook", id: "sign_in", class: 'waves-effect waves-light btn col s3 blue darken-2', style: 'color: #fff;' %>
           <% end -%>
       <% end -%>
       <% end %>
