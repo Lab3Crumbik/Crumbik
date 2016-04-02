@@ -5,6 +5,7 @@ class CreateAdvertisingCampaigns < ActiveRecord::Migration
       t.string :info
       t.date :date
       t.string :image
+      t.attachment :avatar
       t.references :product, index: true, foreign_key: true
 
       t.timestamps null: false

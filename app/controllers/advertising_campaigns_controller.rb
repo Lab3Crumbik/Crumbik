@@ -32,7 +32,9 @@ class AdvertisingCampaignsController < ApplicationController
     respond_to do |format|
       if @advertising_campaign.save
         $client.update("Nueva campaña creada")
-
+        User.all.each do |user|
+          CampaignMailer.new_campaign(user).deliver
+        end
         format.html { redirect_to @advertising_campaign, notice: 'Advertising campaign was successfully created.' }
         format.json { render :show, status: :created, location: @advertising_campaign }
       else
@@ -74,6 +76,6 @@ class AdvertisingCampaignsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def advertising_campaign_params
-      params.require(:advertising_campaign).permit(:name, :info, :date, :image, :product_id)
+      params.require(:advertising_campaign).permit(:name, :info, :date, :image, :product_id, :avatar)
     end
 end

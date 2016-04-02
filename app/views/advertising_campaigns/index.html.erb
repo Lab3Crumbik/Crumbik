@@ -20,7 +20,7 @@
         <td><%= advertising_campaign.name %></td>
         <td><%= advertising_campaign.info %></td>
         <td><%= advertising_campaign.date %></td>
-        <td><%= advertising_campaign.image %></td>
+        <td><%= image_tag(advertising_campaign.avatar, :width => 50) %></td>
         <td><%= advertising_campaign.product.name %></td>
         <td><%= link_to 'Show', advertising_campaign %></td>
         <td><%= link_to 'Edit', edit_advertising_campaign_path(advertising_campaign) %></td>

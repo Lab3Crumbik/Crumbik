@@ -54,5 +54,6 @@ group :development do
   gem 'twitter'
   gem 'instagram'
   gem 'omniauth-google-oauth2'
+  gem 'paperclip'
 end
 
