@@ -6,4 +6,3 @@ class FunctionsController < InheritedResources::Base
       params.require(:function).permit(:name, :info, :url, :father_id, :rol_id)
     end
 end
-
