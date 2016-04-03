@@ -1,3 +1,7 @@
+<div class="container">
+  <div class="row">
+
+
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
@@ -11,27 +15,26 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
+  <div class="field col s6">
+    <%= f.label :Nombre, class: 'black-text'%><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :info %><br>
+  <div class="field col s6">
+    <%= f.label :Descripcion, class:'black-text' %><br>
     <%= f.text_field :info %>
   </div>
-  <div class="field">
-    <%= f.label :price %><br>
+  <div class="field col s6">
+    <%= f.label :Precio, class:'black-text' %><br>
     <%= f.text_field :price %>
   </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
+
+        <div class="actions row ">
+          <div class="col s12 center">
+    <%= f.submit "Registrar"  , class: 'waves-effect waves-light btn ' %>
+            <a class="btn waves-effect waves-light" <%= link_to 'Atras', products_path %></a>
   </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.text_field :status %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+        </div>
 <% end %>
+  </div>
+
+</div>

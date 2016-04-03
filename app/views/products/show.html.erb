@@ -1,29 +1,29 @@
+<div class="container">
+  <div class="row">
+<div class="center">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @product.name %>
+  <h5> <strong>Nombre:</strong>
+  <%= @product.name %></h5>
 </p>
 
 <p>
-  <strong>Info:</strong>
-  <%= @product.info %>
+  <h5><strong>Descripci&oacute;n:</strong>
+  <%= @product.info %></h5>
 </p>
 
 <p>
-  <strong>Price:</strong>
-  <%= @product.price %>
+  <h5> <strong>Precio:</strong>
+  <%= @product.price %></h5>
 </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @product.image %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @product.status %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+</div>
+<div class="actions row ">
+  <div class="col s12 center">
+    <a class="btn waves-effect waves-light" <%= link_to 'Modificar', edit_product_path(@product)%></a>
+    <a class="btn waves-effect waves-light" <%= link_to 'Atras', products_path %></a>
+  </div>
+</div>
+</div>
+</div>
