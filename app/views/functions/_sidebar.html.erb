@@ -1,0 +1,24 @@
+<ul id="slide-out" class="side-nav">
+  <% if current_user != nil %>
+    <ul class="collapsible" data-collapsible="accordion">
+      <% if @all_functions.size != 0 %>
+        <% @all_functions.each do |function| %>
+          <li>
+            <% if function.father_id == '0' %>
+              <div class="collapsible-header"><%= function.name %></div>
+              <% father = function %>
+              <% @all_functions.each do |f| %>
+                <% if f.father_id.to_i == father.id %>
+                  <div class="collapsible-body"><%= link_to f.name, f.url %></div>
+                <% end %>
+              <% end %>
+            <% end %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% else %>
+    <h5><i class="info_outline"></i>No esta autorizado para ver el menu</h5>
+  <% end %>
+</ul>
+<a href="#" data-activates="slide-out" class="button-collapse"><i class="small mdi-navigation-menu" style="color: #000;" ></i></a>
