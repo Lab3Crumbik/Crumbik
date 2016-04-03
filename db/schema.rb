@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160403155451) do
+ActiveRecord::Schema.define(version: 20160403165228) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -80,6 +80,18 @@ ActiveRecord::Schema.define(version: 20160403155451) do
   end
 
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
+
+  create_table "functions", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "info",       limit: 255
+    t.string   "url",        limit: 255
+    t.string   "father_id",  limit: 255
+    t.integer  "rol_id",     limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "functions", ["rol_id"], name: "index_functions_on_rol_id", using: :btree
 
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id",      limit: 4
@@ -221,6 +233,7 @@ ActiveRecord::Schema.define(version: 20160403155451) do
 
   add_foreign_key "advertising_campaigns", "products"
   add_foreign_key "events", "users"
+  add_foreign_key "functions", "rols"
   add_foreign_key "identities", "users"
   add_foreign_key "interactions", "products"
   add_foreign_key "interactions", "users"
