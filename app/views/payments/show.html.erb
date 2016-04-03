@@ -1,33 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="center">
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Amount:</strong>
-  <%= @payment.amount %>
+  <h5><strong>Monto:</strong>
+  <%= @payment.amount %></h5>
 </p>
 
 <p>
-  <strong>Identification:</strong>
-  <%= @payment.identification %>
+      <h5> <strong>Identificaci&oacute;n:</strong>
+  <%= @payment.identification %></h5>
 </p>
 
 <p>
-  <strong>Card number:</strong>
-  <%= @payment.card_number %>
+      <h5><strong>N&uacute;mero de tarjeta:</strong>
+  <%= @payment.card_number %></h5>
 </p>
 
 <p>
-  <strong>Expiration month:</strong>
-  <%= @payment.expiration_month %>
+      <h5> <strong>Mes de Expiraci&oacute;n:</strong>
+  <%= @payment.expiration_month %></h5>
 </p>
 
 <p>
-  <strong>Expiration year:</strong>
-  <%= @payment.expiration_year %>
+      <h5><strong>Año de Expiraci&oacute;n:</strong>
+  <%= @payment.expiration_year %></h5>
 </p>
 
 <p>
-  <strong>Security code:</strong>
-  <%= @payment.security_code %>
+      <h5><strong>C&oacute;digo de Seguridad:</strong>
+  <%= @payment.security_code %></h5>
 </p>
+      </div>
 
-<%= link_to 'Back', payments_path %>
+    <div class="actions row ">
+      <div class="col s12 center">
+
+        <a class="btn waves-effect waves-light" <%= link_to 'Atras', payments_path %></a>
+      </div>
+    </div>
+
+</div>
+    </div>

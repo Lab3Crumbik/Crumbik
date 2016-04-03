@@ -1,5 +1,21 @@
-<h1>Nueva campana</h1>
 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h1>Descubre todo lo que tenemos para ti</h1>
+
+<div>
+  <%= image_tag attachments['image.png'].url %>
+</div>
 <p>
-  Prueba
+  <%= @campa.name %>
 </p>
+<p>
+  La campaña comienza el dia <%= @campa.date %>
+</p>
+
+</body>
+</html>
