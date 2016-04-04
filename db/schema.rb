@@ -192,14 +192,6 @@ ActiveRecord::Schema.define(version: 20160403165228) do
     t.datetime "updated_at",             null: false
   end
 
-  create_table "rols_users", force: :cascade do |t|
-    t.integer "rol_id",  limit: 4
-    t.integer "user_id", limit: 4
-  end
-
-  add_index "rols_users", ["rol_id"], name: "index_rols_users_on_rol_id", using: :btree
-  add_index "rols_users", ["user_id"], name: "index_rols_users_on_user_id", using: :btree
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255,             null: false
     t.string   "encrypted_password",     limit: 255
@@ -241,8 +233,6 @@ ActiveRecord::Schema.define(version: 20160403165228) do
   add_foreign_key "menus_rols", "rols"
   add_foreign_key "organizations", "countries"
   add_foreign_key "profiles", "users"
-  add_foreign_key "rols_users", "rols"
-  add_foreign_key "rols_users", "users"
   add_foreign_key "users", "countries"
   add_foreign_key "users", "rols"
 end

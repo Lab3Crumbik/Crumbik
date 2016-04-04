@@ -1,3 +1,8 @@
+<div class="container">
+  <div class="row">
+
+
+
 <%= form_for(@advertising_campaign, :multipart => true) do |f| %>
   <% if @advertising_campaign.errors.any? %>
     <div id="error_explanation">
@@ -11,33 +16,64 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
+  <div class="field col s9">
+    <%= f.label :Nombre, class: 'black-text' %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :info %><br>
+  <div class="field col s9">
+    <%= f.label :Descripcion, class: 'black-text' %><br>
     <%= f.text_field :info %>
   </div>
-  <div class="field">
-    <%= f.label :date %><br>
+  <div class="field col s9">
+    <%= f.label :Fecha, class: 'black-text' %><br>
     <%= f.date_select :date %>
   </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
-  </div>
-    <div class="field">
-    <%= f.label :imagen %><br>
-    <%= f.file_field :avatar %>
+
+        <div class="field col s9">
+          <%= f.label :product_id, class: 'black-text' %>
+          <%= f.select :product_id, options_for_select(@products.map{|p| [p.name, p.id]}, required: true, class: 'col s8') %>
+        </div><br>
+
+    <div class="field col s9">
+    <%= f.label :Imagen, class: 'black-text' %><br>
+
+    <%= f.file_field :avatar,  :onchange => 'readURL(this)'%>
+
+
     </div>
 
-    <div class="field">
-      <%= f.label :product_id %>
-      <%= f.select :product_id, options_for_select(@products.map{|p| [p.name, p.id]}, required: true, class: 'col s8') %>
-    </div><br>
-  <div class="actions">
-    <%= f.submit %>
+
+        <div class="actions row ">
+          <div class="col s12 center">
+            <%= f.submit "Registrar"  , class: 'waves-effect waves-light btn ' %>
+            <a class="btn waves-effect waves-light" <%= link_to 'Atras', advertising_campaigns_path %></a>
+          </div>
+        </div>
+
+        <div style="margin-left: 800px; margin-top: -438px;">
+          <img id="img_prev"/>
+        </div>
+
+  <% end %>
+
+
   </div>
-<% end %>
+</div>
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#img_prev')
+                        .attr('src', e.target.result)
+                        .width(250)
+                        .height(250);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
 
