@@ -38,6 +38,13 @@
     <%= f.label :Telefono, class: 'black-text' %><br>
     <%= f.text_field :phone %>
   </div>
+        <div class="field col s9">
+          <%= f.label :Logo, class: 'black-text' %><br>
+
+          <%= f.file_field :avatar,  :onchange => 'readURL(this)'%>
+
+
+        </div>
 
 
 
@@ -47,7 +54,27 @@
           </div>
         </div>
 
+        <div style="margin-left: 800px; margin-top: -438px;">
+          <img id="img_prev"/>
+        </div>
+
 <% end %>
   </div>
 </div>
 
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#img_prev')
+                        .attr('src', e.target.result)
+                        .width(250)
+                        .height(250);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
