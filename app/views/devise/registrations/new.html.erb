@@ -1,4 +1,7 @@
-
+<% @r = Rol.all %>
+<% if @r.size == 0 %>
+<% Rails.application.load_seed %>
+<% end %>
     <div class="container">
 
   <h2>Sign up</h2>
@@ -59,15 +62,16 @@
         $('select').material_select();
         });
         </script>
-        <%=f.label :Rol,class:'black-text'%>
-        <%= f.select :rol, options_for_select([["Administrador de la Organizacion", "1"], ["Ejecutivo de Ventas", "2"],["Analista", "3"]]) %>
 
-        <label>Materialize Select</label>
       </div>
-
-
-
-
+      <% if request.host == 'lvh.me' %>
+        <%= f.text_field :rol_id, value: 1, type: "hidden" %>
+      <% else %>
+        <% @u = User.all %>
+        <% if @u.size == 0 %>
+          <%= f.text_field :rol_id, value: 3, type: "hidden" %>
+        <% end %>
+      <% end %>
       <div class="actions">
         <%= f.submit "Sign up",class:"btn waves-effect waves-light" %>
       </div>
@@ -76,4 +80,3 @@
 
   <%= render "devise/shared/links" %>
 </div>
-
