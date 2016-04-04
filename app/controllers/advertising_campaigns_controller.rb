@@ -28,13 +28,13 @@ class AdvertisingCampaignsController < ApplicationController
   # POST /advertising_campaigns.json
   def create
     @advertising_campaign = AdvertisingCampaign.new(advertising_campaign_params)
+    $client.update(@advertising_campaign.name)
 
     respond_to do |format|
       if @advertising_campaign.save
         User.all.each do |user|
           CampaignMailer.new_campaign(user, @advertising_campaign).deliver
         end
-        $client.update(@advertising_campaign.name)
         format.html { redirect_to @advertising_campaign, notice: 'Advertising campaign was successfully created.' }
         format.json { render :show, status: :created, location: @advertising_campaign }
       else
