@@ -1,29 +1,42 @@
+<div class="container">
+<div class="row">
+<div class="center">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @advertising_campaign.name %>
+  <h5><strong>Nombre:</strong>
+  <%= @advertising_campaign.name %></h5>
 </p>
 
 <p>
-  <strong>Info:</strong>
-  <%= @advertising_campaign.info %>
+<h5> <strong>Descripci&oacute;n:</strong>
+  <%= @advertising_campaign.info %></h5>
 </p>
 
 <p>
-  <strong>Date:</strong>
-  <%= @advertising_campaign.date %>
+  <h5><strong>Fecha:</strong>
+  <%= @advertising_campaign.date %></h5>
 </p>
 
+  <p>
+    <h5><strong>Producto:</strong>
+    <%= @advertising_campaign.product.name %></h5>
+  </p>
+
 <p>
-  <strong>Avatar:</strong>
+  <h5> <strong>Imagen:</strong></h5>
   <%= image_tag @advertising_campaign.avatar, :width => 50 %>
 </p>
 
-<p>
-  <strong>Product:</strong>
-  <%= @advertising_campaign.product.name %>
-</p>
 
-<%= link_to 'Edit', edit_advertising_campaign_path(@advertising_campaign) %> |
-<%= link_to 'Back', advertising_campaigns_path %>
+</div>
+
+  <div class="actions row ">
+    <div class="col s12 center">
+      <a class="btn waves-effect waves-light" <%= link_to 'Modificar', edit_advertising_campaign_path(@advertising_campaign) %></a>
+      <a class="btn waves-effect waves-light" <%= link_to 'Atras', advertising_campaigns_path %></a>
+    </div>
+  </div>
+
+</div>
+</div>
