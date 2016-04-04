@@ -46,33 +46,31 @@ class PaymentsController < ApplicationController
     resultado = ActiveSupport::JSON.decode(RestClient.get(url, parametros))
     respond_to do |format|
  if resultado["exito"] == "true"
-      puts "entro al if"
-      
+
       if @payment.save
        puts "entro al  save"
-        format.html { redirect_to root_path,  notice: 'Su pago ha sido procesado satisfactoriamente' }
+        format.html { redirect_to new_organization_path,  notice: 'Su pago ha sido procesado satisfactoriamente' }
         format.json { render :show, status: :created, location: @payment }
       else
         format.html { render :new }
         format.json { render json: @payment.errors, status: :unprocessable_entity }
       end
-    
+
     else
-      puts "entro al else"
         format.html { render :new , notice: 'Hubo un problema con su solicitud, consulte a su banco para mas informacion'}
          format.json { render json: @payment.errors, status: :unprocessable_entity }
       end
-    end 
+    end
 
   end
 
   # PATCH/PUT /payments/1
   # PATCH/PUT /payments/1.json
-  
+
 
   # DELETE /payments/1
   # DELETE /payments/1.json
-  
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
