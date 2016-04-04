@@ -1,9 +1,10 @@
 <ul id="slide-out" class="side-nav">
-  <% if current_user != nil %>
+  <% if user_signed_in? %>
     <ul class="collapsible" data-collapsible="accordion">
       <% if @all_functions.size != 0 %>
         <% @all_functions.each do |function| %>
           <li>
+            <% if function.rol_id == current_user.rol_id %>
             <% if function.father_id == '0' %>
               <div class="collapsible-header"><%= function.name %></div>
               <% father = function %>
@@ -12,6 +13,7 @@
                   <div class="collapsible-body"><%= link_to f.name, f.url %></div>
                 <% end %>
               <% end %>
+            <% end %>
             <% end %>
           </li>
         <% end %>
