@@ -139,16 +139,20 @@ ActiveRecord::Schema.define(version: 20160403165228) do
   add_index "menus_rols", ["rol_id"], name: "index_menus_rols_on_rol_id", using: :btree
 
   create_table "organizations", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "email",      limit: 255
-    t.text     "slogan",     limit: 65535
-    t.text     "mission",    limit: 65535
-    t.text     "vision",     limit: 65535
-    t.string   "phone",      limit: 255
+    t.string   "name",                limit: 255
+    t.string   "email",               limit: 255
+    t.text     "slogan",              limit: 65535
+    t.text     "mission",             limit: 65535
+    t.text     "vision",              limit: 65535
+    t.string   "phone",               limit: 255
+    t.string   "avatar_file_name",    limit: 255
+    t.string   "avatar_content_type", limit: 255
+    t.integer  "avatar_file_size",    limit: 4
+    t.datetime "avatar_updated_at"
     t.boolean  "status"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.integer  "country_id", limit: 4
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.integer  "country_id",          limit: 4
   end
 
   add_index "organizations", ["country_id"], name: "index_organizations_on_country_id", using: :btree
