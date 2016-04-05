@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Organizaci&ocute;n</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= yield :css_personalizado %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%=    csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+  <!-- Incluya los javascripts: Extjs 5.1 -->
+  <script type="text/javascript" src="<%= asset_path 'js/ext/build/ext-all.js' %>"></script>
+  <!-- Incluya hojas de estilos de: Extjs 5.1 -->
+  <link rel="stylesheet" type="text/css" href="<%= asset_path 'js/ext/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css' %>">
+</head>
+
+
+<body>
+<%= render "partials/header_org" %>
+<%= render "functions/sidebar" %>
+<% if notice %>
+    <p class="card-panel teal lighten-2"><%= notice %></p>
+<% end %>
+<% if alert %>
+    <p class="card-panel teal lighten-2"><%= alert %></p>
+<% end %>
+<div class="row">
+
+  <%= yield %>
+
+</div>
+<%= render "partials/footer_org" %>
+<div id="tree_el">
+
+</div>
+<%= yield :javascript_personalizado %>
+</body>
+
+</html>

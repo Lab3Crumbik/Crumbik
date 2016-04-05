@@ -1,0 +1,30 @@
+
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper grey lighten-4">
+      <div class="contenedor">
+        <a href="" class="brand-logo">
+          <img src="<%= asset_path 'logodelaorg' %>"><span id="logo-text">Nombre de la org</span>
+        </a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><%=  link_to "Inicio", root_path, class: "black-text" %></li>
+          <li><a href="#nosotros" class="black-text">Nosotros</a></li>
+          <li><a href="#productos" class="black-text">Productos</a></li>
+          <li><a href="#contactanos" class="black-text">Cont&aacute;ctanos</a></li>
+        </ul>
+        <ul id="nav-sesion" class="hide-on-med-and-down">
+          <% if user_signed_in? %>
+
+              <li><%=  link_to "Cerrar Sesion" , destroy_user_session_path, method: :delete, class: "blue-text" %></li>
+
+          <%  else %>
+          <li><%=  link_to "Iniciar Sesion", paginas_iniciar_sesion_cliente_path, class: "black-text" %></li>
+          <li> <%= link_to "Registrarse" , paginas_registro_cliente_path, class: "black-text" %></li>
+          <%  end %>
+        </ul>
+      </div>
+      </ul>
+    </div>
+  </nav>
+</div>
+

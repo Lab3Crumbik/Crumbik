@@ -32,7 +32,7 @@
         <td><%= organization.mission %></td>
         <td><%= organization.vision %></td>
         <td><%= organization.phone %></td>
-        <td><%= image_tag(advertising_campaign.avatar, :width => 50) %></td>
+        <td><%= image_tag(organization.avatar, :width => 50) %></td>
         <td><%= link_to 'Consultar', organization %></td>
         <td><%= link_to 'Modificar', edit_organization_path(organization) %></td>
         <td><%= link_to 'Eliminar', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>

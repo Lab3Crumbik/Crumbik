@@ -28,20 +28,23 @@ class AdvertisingCampaignsController < ApplicationController
   # POST /advertising_campaigns.json
   def create
     @advertising_campaign = AdvertisingCampaign.new(advertising_campaign_params)
-    $client.update(@advertising_campaign.name)
+    #$client.update_with_media(@advertising_campaign.name,File.read("#{Rails.root}"+"/"+"public"+"/"+@advertising_campaign.avatar.url.at(1..70)+@advertising_campaign.avatar_file_name) )
 
     respond_to do |format|
       if @advertising_campaign.save
-        User.all.each do |user|
-          CampaignMailer.new_campaign(user, @advertising_campaign).deliver
-        end
+       # User.all.each do |user|
+        #  CampaignMailer.new_campaign(user, @advertising_campaign).deliver
+       # end
         format.html { redirect_to @advertising_campaign, notice: 'Advertising campaign was successfully created.' }
         format.json { render :show, status: :created, location: @advertising_campaign }
+        $client.update_with_media(@advertising_campaign.name , File.new("#{Rails.root}"+"/"+"public"+"/"+@advertising_campaign.avatar.url.at(1..58)+@advertising_campaign.avatar_file_name))
+
       else
         format.html { render :new }
         format.json { render json: @advertising_campaign.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /advertising_campaigns/1
@@ -49,6 +52,7 @@ class AdvertisingCampaignsController < ApplicationController
   def update
     respond_to do |format|
       if @advertising_campaign.update(advertising_campaign_params)
+
         format.html { redirect_to @advertising_campaign, notice: 'Advertising campaign was successfully updated.' }
         format.json { render :show, status: :ok, location: @advertising_campaign }
       else

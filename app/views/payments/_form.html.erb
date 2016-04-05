@@ -14,27 +14,27 @@
   <% end %>
 
   <div class="field col s6 ">
-    <%= f.label :amount, class:'black-text' %><br>
+    <%= f.label :Monto, class:'black-text' %><br>
     <%= f.number_field :amount,required: true, numericality: true, title: 'solo numero'%>
   </div>
   <div class="field col s6">
-    <%= f.label :identification, class:'black-text' %><br>
+    <%= f.label :Identificacion, class:'black-text' %><br>
     <%= f.text_field :identification ,required: true%>
   </div>
   <div class="field col s6">
-    <%= f.label :card_number, class: 'black-text'%><br>
+    <%= f.label :Numero_de_tarjeta, class: 'black-text'%><br>
     <%= f.text_field :card_number, :maxlength => 16,required: true, pattern: '.{3,16}', title: 'El numero de tarjeta debe tener minimo 3 caracteres' %>
   </div>
   <div class="field col s6">
-    <%= f.label :expiration_month,class:'black-text' %><br>
+    <%= f.label :Mes_de_Expiracion,class:'black-text' %><br>
     <%= f.text_field :expiration_month,required: true %>
   </div>
   <div class="field col s6">
-    <%= f.label :expiration_year,class:'black-text'%><br>
+    <%= f.label :Año_de_Expiracion,class:'black-text'%><br>
     <%= f.text_field :expiration_year,required: true %>
   </div>
   <div class="field col s6">
-    <%= f.label :security_code,class:'black-text'%><br>
+    <%= f.label :Codigo_de_Seguridad,class:'black-text'%><br>
     <%= f.text_field :security_code,required: true%>
   </div>
   <div class="actions center row">

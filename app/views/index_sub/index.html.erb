@@ -1,0 +1,203 @@
+<!-- Parallax -->
+
+<div class="section  parallax-container">
+  <div class="row container">
+
+    <h2 class="">Nombre de la Org </h2>
+    <h4 class="">Slogan </h4>
+
+  </div>
+
+  <div>
+    <h5 class="center ">Queremos ser parte de ti</h5>
+  </div>
+
+  <div class="row container">
+    <a id="btnRegistrarCliente" class="btn waves-effect blue right col s12 center" type="submit">Registrate aqui</a>
+  </div>
+  <div class="center-align">
+    <div class="row container">
+      <h3 class=" col s12 center">Recibe información al instante sobre nuestros productos y servicios</h3>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="parallax-container">
+  <div class="parallax"><img src="<%= asset_path 'p1.jpg' %>">  </div>
+</div>
+
+
+<!-- Nosotros-->
+<body class="fondoSub">
+<div class="section"  id="nosotros">
+  <div class="row">
+    <h4 class="col s2 offset-s2">Nosotros</h4>
+  </div>
+  <div class="row container center ">
+    <div class="row">
+      <div class="col s6">
+        <div >
+          <ul class="collapsible popout" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header cyan lighten-5 darken-1" >
+                <div class="center">
+
+                  <h6 class="center" style="position: relative;  top:15px"> Mision </h6>
+                </div>
+              </div>
+              <div class="collapsible-body  row"><p> Mision de la Org </p></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col s6">
+        <div class="center">
+          <ul class="collapsible popout" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header cyan lighten-5 darken-1">
+                <div class="center">
+
+                  <h6 class="center" style="position: relative; top:15px"> Vision </h6>
+                </div>
+              </div>
+              <div class="collapsible-body  row"><p>Vision de la Org</p></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $('.collapsible').collapsible({
+            accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        });
+    });
+
+</script>
+</div >
+</body>
+<!-- /Nosotros-->
+
+
+<div class="parallax-container">
+  <div class="parallax"><img src="<%= asset_path 'p2.jpg' %>"></div>
+</div>
+
+<!-- Productos-->
+<body class="fondoazul">
+<div class="section" id="productos">
+  <div class="row container">
+    <h4 class="black-text">Productos</h4>
+  </div>
+
+  <div class="row container center">
+
+  </div>
+</div>
+</body>
+<!-- /Productos-->
+
+<div class="parallax-container">
+  <div class="parallax"><img src="<%= asset_path 'p4.jpg' %>"></div>
+</div>
+
+
+<!-- Contáctanos-->
+
+<div class="section row container" id="contactanos">
+
+  <div class="row">
+    <h4 class="black-text">Cont&aacute;ctanos</h4>
+  </div>
+
+
+
+  <div class="input-field col s7">
+    <select>
+      <option value=""disabled selected>Seleccione su solicitud</option>
+      <option value="1">Solicitud de información</option>
+      <option value="2">Reclamos</option>
+      <option value="3">Sugerencias</option>
+    </select>
+    <label>Tipo de Solicitud</label>
+  </div>
+
+
+  <div class="row ">
+    <form>
+      <div class="input-field col s7 ">
+        <i class="material-icons prefix iconnegro">account_circle</i>
+        <input id="nombreContacto" type="text" class="validate">
+        <label for="nombreContacto">Nombre </label>
+      </div>
+
+      <div class="input-field col s7 ">
+        <i class="material-icons prefix iconnegro">email</i>
+        <input id="emailContacto" type="text" class="validate">
+        <label for="emailContacto">Email </label>
+      </div>
+
+      <div class="input-field col s7 ">
+        <i class="material-icons prefix iconnegro">phone</i>
+        <input id="telefonoContacto" type="tel" class="validate">
+        <label for="telefonoContacto">Tel&eacute;fono </label>
+      </div>
+
+      <div class="input-field col s7 ">
+        <i class="material-icons prefix iconnegro">spellcheck</i>
+        <input id="asuntoContacto" type="text" class="validate">
+        <label for="asuntoContacto">Asunto </label>
+      </div>
+
+      <div class="input-field col s7 ">
+        <i class="material-icons prefix iconnegro">mode_edit</i>
+        <textarea id="mensajeContacto" class="materialize-textarea"></textarea>
+        <label for="mensajeContacto">Mensaje </label>
+      </div>
+    </form>
+  </div>
+
+  <div class="row" >
+    <div class="col s12 center" >
+      <button id="btnEnviarContacto" class="btn waves-effect blue offset-s4" type="submit" name="action">Enviar</button>
+    </div>
+  </div>
+
+  <script>
+      $(document).ready(function() {
+          $('select').material_select();
+      });
+  </script>
+</div>
+<!-- /Contáctanos-->
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.parallax').parallax();
+    });
+</script>
+
+</div>
+<!-- /Parallax -->
+<!-- registrar google-->
+<div id="evelyn" class="modal grey lighten-3" style="width: 500px" onscroll="true">
+  <div class="modal-content center ">
+    <h4 class="turquesa">Registro</h4>
+    <h5>Inicia sesión con:</h5>
+    <p>O</p>
+  </div>
+  <div class="row center">
+    <button class="btn waves-effect blue  waves-light"><%= link_to "Registrarse" , paginas_registro_org_path   , class: "white-text" %></button>
+  </div>
+
+</div>
