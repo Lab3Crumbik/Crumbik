@@ -3,6 +3,7 @@
 * Comandos de instalacion
 * Comandos para creacion de base de datos
 * Comandos para llenar la base de datos
+* Instrucciones para el administrador de Organizacion
 
 #### Comandos de instalacion
 
@@ -24,3 +25,8 @@ Para que nuestro sistema tenga las configuraciones iniciales necesarias
  > rake db:seed
 
 Solo queda correr el servidor y *Bienvenido a Crumbik*
+
+#### Instrucciones para el administradorde Organizacion
+
+Para que el administrador de la organizacion registre a los empleados con sus respectivos roles
+se tiene que dirigir a */admin/users*, desde alli vera la lista de usuarios y podra agregar uno nuevo
