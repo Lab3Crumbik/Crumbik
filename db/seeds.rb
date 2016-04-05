@@ -33,7 +33,7 @@ Function.create! [
   {name: "Lista", info: "", url: "/profiles", father_id: 5, rol_id: 2},
   {name: "Lista", info: "", url: "/", father_id: 6, rol_id: 2},
   {name: "Lista", info: "", url: "/", father_id: 7, rol_id: 4},
-  {name: "Lista", info: "", url: "/", father_id: 8, rol_id: 3},
+  {name: "Lista", info: "", url: "/admin/users", father_id: 8, rol_id: 3},
   {name: "Lista", info: "", url: "/rols", father_id: 9, rol_id: 3},
   {name: "Nuevo", info: "", url: "/organizations/new", father_id: 1, rol_id: 1},
   {name: "Nuevo", info: "", url: "/payments/new", father_id: 2, rol_id: 1},
@@ -43,6 +43,6 @@ Function.create! [
   {name: "Nuevo", info: "", url: "/", father_id: 6, rol_id: 2},
   {name: "Nuevo", info: "", url: "/", father_id: 7, rol_id: 4},
   {name: "Nuevo", info: "", url: "/", father_id: 8, rol_id: 3},
-  {name: "Nuevo", info: "", url: "/", father_id: 9, rol_id: 3},
+  {name: "Nuevo", info: "", url: "/admin/users/new", father_id: 9, rol_id: 3},
   {name: "Mostrar", info: "", url: "/", father_id: 10, rol_id: 3},
 ]

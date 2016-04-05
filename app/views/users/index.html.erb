@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lista de usuarios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.name %></td>
+        <td><%= user.lastname %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to "Nuevo empleado", new_user_path %>

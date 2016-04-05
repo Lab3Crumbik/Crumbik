@@ -19,7 +19,9 @@ Rails.application.routes.draw do
 
   #devise_for :users, class_name: 'FormUser', :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
   devise_for :users, :controllers => { :registration => "registration", :omniauth_callbacks => "omniauth_callbacks" }
-
+  scope "/admin" do
+    resources :users
+  end
   get 'functions/sidebar' => 'functions#sidebar'
 
   devise_scope :user do
